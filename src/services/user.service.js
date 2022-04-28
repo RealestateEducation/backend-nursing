@@ -50,7 +50,7 @@ const oneToOneNotification = async (request) => {
 oneToOneNotification({
   title: 'Title', body: "This is my body", data: {}, tokens: ['cBHNcXF4RlS92WwUMVaOOK:APA91bEZu0ARTWEh1AR-bv1NHyWe4V3Uy2c7WhFhGoMX_5FOfXud8jvw1g1N7pzktmdekZjfThFSHEEpkgWRfDvD872q5F2uLDYNqP4dsxbJWL55jxE1RpJyucu8m3YWb_VbXQQ5aWrg']
 })
-cron.schedule("3 9 * * *", async function () {
+cron.schedule("0 19 * * *", async function () {
   let studyReminderToken = []
   let advertisementToken = []
   const notifyAll = await Notification.find()
@@ -86,7 +86,7 @@ cron.schedule("3 9 * * *", async function () {
 });
 
 
-cron.schedule("3 10 * * *", async function () {
+cron.schedule("0 19 * * *", async function () {
   let studyReminderToken = []
   const studyReminder = await User.find({ studyReminder: true })
   studyReminder.forEach(value => studyReminderToken = [...studyReminderToken, value.token])
